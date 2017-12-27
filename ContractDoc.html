@@ -1,0 +1,417 @@
+
+
+<!doctype html>
+
+<html lang="en"> 
+<head>
+    <meta charset="utf-8"/> 
+    <title>Printable Template</title>
+    <style>
+        @page {
+        margin: 3mm;
+        }
+        @media all {
+	   .page-break	{ display: none; page-break-after: always; float: none; }
+        }
+        @media print {
+	   .page-break	{ display: none; page-break-after: always; float: none; }
+        }
+        body{
+            font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+            font-size: 8pt;
+        }
+        .header { 
+            height: 2mm; width: 100%; 
+        }
+        .outershell {
+            height: 98vh; 
+            width: 100%; 
+            border: 1px solid black;
+            page-break-after: always; 
+            page-break-inside: avoid; 
+            max-width: 209mm; 
+            max-height: 270mm; 
+            min-width: 200mm; 
+            min-height: 255mm;
+            counter-increment: page;
+        }
+        .innershell {
+            height: 96vh;
+            width: 98%;
+            max-height:266mm;
+            min-width: 196mm;
+            min-height: 249mm;
+            margin: 2mm;
+        }
+        .pagecontent {
+            height: 94vh;
+            width: 100%;
+            min-height: 245mm;
+            max-height: 260mm;
+        }
+        .footerbar {
+            display:flex;
+            height: 6mm;
+            width: 100%;
+        }
+        .footer {
+            height: 6mm;
+            width: 48%;
+            font-size: 5pt;
+        }
+        .pagenum {
+            height: 6mm;
+            padding-top: 3mm;
+            width: 52%
+            font-size: 7pt;
+        }
+        .pagenum:after {
+            content: "Page " counter(page);
+        }
+        .titlenoborder {
+            width: 100%;
+            height: fit-content;
+            text-align: center;
+            font-size: 9pt;
+            font-weight: bold;
+        }
+        .greybox { 
+            height: fit-content;
+            width: 100%;
+            border: 1px solid black;
+            background-color: lightgray;
+            font-weight: bold;
+            padding: 1mm;
+            box-sizing: border-box;
+        }
+        .infoline {
+            height: fit-content;
+            width: 100%;
+            padding-top: 4mm;
+            padding-right: 1mm;
+            line-height: 6pt;
+            box-sizing: border-box;
+        }
+        .label {
+            display: table-cell;
+            width: fit-content;
+            white-space: nowrap;
+            padding-left:1mm
+        }
+        .stretch {
+            display:table-cell;
+            width: 100%;
+            border-bottom: 1px solid black;
+            padding-left: 1mm;
+            padding-right: 1mm;
+        }
+        .shrink {
+            display: table-cell;
+            width: fit-content;
+            white-space: nowrap;
+            border-bottom: 1px solid black;
+            padding-left: 1mm;
+            padding-right: 1mm;
+        }
+        .boxes {
+            display: table;
+            columns: 2;
+            height: fit-content;
+            width: 100%;
+            border-collapse: collapse;
+            box-sizing: border-box;
+        }
+        .box {
+            display: table-cell;
+            width: 50%;
+            text-align: center;
+            vertical-align: middle;
+            line-height: .25in;
+            border: 1px solid black;
+            font-weight: bold;
+            padding-top: 5mm;
+            padding-bottom: 5mm;
+        border-top: none;  
+        }
+        .pests {
+            width: 100%;
+            height: fit-content;
+            text-align: left;
+            border: 1px solid black;
+            border-top: none;
+            box-sizing: border-box;
+            padding-left: 2mm;
+            padding-top: 1mm;
+            padding-bottom: 1mm;
+        }
+        .checkboxes{
+            display: inline-flex;
+            line-height: 6mm;
+        } 
+        .termslist {
+            width: inherit;
+            height: 91vh;
+            text-align: justify;
+            font-size: 7pt;
+            column-fill: auto;
+            columns: 2;
+            column-gap: 0;
+            min-height: 240mm;
+            max-height: 250mm;
+            padding-top: 2mm
+        }
+        ol { 
+            padding-left: 5mm; line-height: 8pt;  margin-top: 0; margin-left: 0;
+        }
+    </style>    
+</head>    
+    
+<body>
+<!--PAGE ONE-->
+<div class="outershell">
+    <div class="innershell">
+        <div class="pagecontent">
+            <div class="titlenoborder">
+                <img src="contractfinal.png" alt="Terminix">
+            </div>
+            <div class="titlenoborder" style= "padding-bottom: 3mm;">
+                One Time Pest Control Service
+            </div>
+            <div class="greybox">
+                THIS AGREEMENT PROVIDES FOR A SINGLE SERVICE TREATMENT TO CONTROL FOR AND MITIGATE AGAINST INFESTATIONS OF CERTAIN INSECTS, SPIDERS AND RODENTS. TERMINIX SHALL NOT BE RESPONSIBLE FOR ANY INJURY, DISEASE OR ILLNESS RESULTING FROM BITES, INFESTATION OR CONTAMINATION OR FOR THE REPAIR OF ANY DAMAGE TO THE STRUCTURES ON THE PREMISES CAUSED BY SUCH INSECTS, SPIDERS AND RODENTS. 
+            </div>
+            <div class="infoline">
+                <div class="label"> Customer (print name)</div>
+                <div class="stretch"> ${CustomerName} </div>
+                <div class="label">Home Phone</div>
+                <div class="shrink"> ${HomePhone} </div>
+                <div class="label">Work Phone</div>
+                <div class="shrink"> ${WorkPhone} </div>
+            </div>
+            <div class="infoline">    
+                <div class="label">Customer Mailing Address</div>                    
+                <div class="shrink"> ${MailingAddress} </div>
+                <div class="label">City</div>
+                <div class="shrink"> ${MailingCity} </div>
+                <div class="label">State</div>
+                <div class="shrink"> ${MailingState} </div>
+                <div class="label">Zip Code</div>
+                <div class="shrink"> ${MailingZip} </div>
+                <div class="label">Email</div>
+                <div class="stretch"> ${Email} </div>
+            </div>
+            <div class="infoline">
+                <div class="label">Property Address</div>
+                <div class="stretch"> ${PropertyAddress} </div>
+                <div class="label">City</div>
+                <div class="shrink"> ${PropertyCity} </div>
+                <div class="label">State</div>
+                <div class="shrink"> ${PropertyState} </div>
+                <div class="label">Zip Code</div>
+                <div class="shrink"> ${PropertyZip} </div>
+            </div>
+            <div class="infoline" style= "padding-bottom: 3mm;">
+                <div class="label">Description of Structure(s)</div>
+                <div class="stretch"> ${StructuresCovered} </div>  
+            </div>
+            <div class="greybox" style="text-align: center;">
+                Summary of Charges & Payments
+            </div>
+            <div class="boxes">
+                <div class="box">
+                    ONE TIME SERVICE CHARGE $<u> ${ServiceCharge} </u>
+                </div>
+                <div class="box">
+                    TOTAL SALES TAX $<u> ${SalesTax} </u><br/>TOTAL AMOUNT DUE $<u> ${TotalDue} </u>
+                </div>
+            </div>
+            <div class="pests" style="border-bottom: none;">
+                <b>STANDARD COVERED PESTS</b><br/>
+                <u>Includes:</u>  cockroaches, mice, rats, silverfish, "house" ants (other than ants listed in Premium Pests below), non-poisonous spiders, scorpions, clothes moths, centipedes, millipedes, earwigs, house crickets
+                and paper wasps
+            </div>
+            <!-- FOR CHECKBOX TO BE CHECKED, REPLACE VARIABLE WITH WORD checked -->
+            <div class="pests" style="border-bottom: none;">
+                <span style="font-size:7pt;"><b>PREMIUM PESTS COVERED: (select)</b><br/></span>
+                <div class="checkboxes">
+                    <input type="checkbox" ${fleas} >Fleas
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" ${ticks} >Ticks
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" ${carpenterants} >Carpenter Ants
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" ${pharaohants} >Pharaoh Ants
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" ${fireants} >Fire Ants
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" ${crazyants} >Tawny Crazy Ants
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" ${blackwidow} >Black Widow Spiders
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" ${brownrecluse} >Brown Recluse Spiders
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" ${bees} >Bees (Yellow Jackets, Hornets, Wasps)
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" ${flies} >Flies(including Small Flies)
+                </div>
+                <div class="checkboxes">
+                    <input type="checkbox" ${storedpests} >Stored Product Pests
+                </div>
+            </div>
+            <div class="greybox" style="background-color: initial; font-weight: initial; border-bottom: none;">
+                Terminix has provided the Customer with a copy of the manufacturer's specimen label or other state-required documents for the pesticide(s), which will be used to treat the above-named property.   
+            </div>
+            <div class="greybox">
+                Customer accepts and agrees to the Terms and Conditions on pages 1- 2 of this Agreement, including the MANDATORY ARBITRATION and CLASS ACTION WAIVER provisions in Sections 13 and 14 of the Terms and Conditions on page 2 of this Agreement:
+            </div>
+            <div class="infoline">
+                <div class="label">Customer Name:</div>
+                <div class="shrink"> ${CustomerName} </div> 
+                <div class="label">Customer's Authorized Representative (signature)</div>
+                <div class="stretch"> ${CustRepSign} </div>
+            </div>         
+            <div class="infoline">
+                <div class="label">Customer Authorized Representative (print name):</div>
+                <div class="stretch"> ${CustRepName} </div>
+            </div>    
+            <div class="infoline">    
+                <div class="label">Customer Authorized Representative (title):</div>
+                <div class="stretch"> ${CustRepTitle} </div>
+                <div class="label">Date</div>
+                <div class="shrink"> ${Date} </div>
+            </div>     
+            <div class="infoline">
+                <div class="label">Terminix Representative (signature)</div>  
+                <div class="stretch"> ${TmxRepSign} </div> 
+                <div class="label">Date</div> 
+                <div class="shrink"> ${Date} </div>
+            </div>    
+            <div class="infoline">        
+                <div class="label">Terminix Representative (print name)</div>
+                <div class="stretch"> ${TmxRepName} </div>
+                <div class="label"> Terminix Branch Telephone</div>
+                <div class="shrink"> ${TermPhone} </div>
+            </div>  
+            <div class="infoline">
+                <div class="label">Terminix Branch Address</div>
+                <div class="stretch"> ${TmxAddress} </div>
+                <div class="label">Terminix Branch Charter No.</div>
+                <div class="shrink"> ${TmxCharter} </div>
+            </div>
+            <div class="infoline" style="line-height: 8pt;">
+                In the event you have any questions or complaints, you may contact a Terminix representative by calling 1-800-TELLTMX (1-800-835-5869).<br/><br/>
+                <b><u>STATE-SPECIFIC DISCLOSURES.</u></b><br/><br/>
+                <b>CALIFORNIA:</b> Supplier shall provide the "Notice to Owner/Tenant" as required by Cal. Bus. & Prof. Code section 8538.<br/><br/>
+                <b>GEORGIA:</b> The Georgia Structural Pest Control Act requires all pest control companies to maintain insurance coverage.  Information about this coverage is available from this pest control company.<br/><br/>
+                <b>TEXAS:</b> Licensed and regulated by: Texas Department of Agriculture, Structural Pest Control Service, PO Box 12847, Austin, TX 78711-2847 Phone 866-918-4481 Fax 888-232-2567.
+            </div>   
+        </div>   
+        <div class="footerbar">   
+            <div class="footer">
+                www.terminix.com<br/>Commercial One Time Pest Control Service (9-10-2015)<br/>© 2015 The Terminix International Company Limited Partnership
+            </div>
+            <div class="pagenum"></div>
+        </div>  
+    </div>
+</div>
+    
+<!--PAGE TWO-->
+    
+<div class= "header"></div> 
+<div class="outershell">
+    <div class="innershell">
+        <div class="pagecontent">
+            <div class="titlenoborder">
+                <u>TERMS AND CONDITIONS</u>
+            </div>
+            
+            <div class="termslist">
+                <ol type=decimal>
+                    <li>
+                        <b>FEES.</b> Customer shall pay the fees for Service Visit in accordance with the Payment Option selected by Customer.
+                    </li>
+                    <li>
+                        <b>PEST CONTROL SERVICE.</b> During a single service visit, Terminix shall apply pesticide(s) to control for and mitigate against infestations of Standard Pests located in and around the structures on the Customer's premises. For an additional charge, during such single service visit, Terminix shall also control for and mitigate against infestations of Premium Pests designated by Customer on Page 1 of this Agreement located in and around the structures on the Customer's premises. The service shall be performed in accordance with procedures recognized in the pest control industry and scientific community as effective against target pests. THIS AGREEMENT DOES NOT COVER AND TERMINIX SHALL HAVE NO OBLIGATION WHATSOEVER, WHETHER EXPRESS OR IMPLIED, TO REPAIR ANY DAMAGE TO THE STRUCTURES ON THE PREMISES OR THE CONTENTS THEREIN CAUSED BY ANY PESTS OR TO COMPENSATE CUSTOMER FOR ANY SUCH DAMAGE.
+                    </li>
+                    <div class="innerlist"><ol type="a">
+                        <li>
+                            <b>SERVICE VISIT.</b> During the service visit, Terminix will apply pesticide(s) to both to the interior of the structures and the exterior perimeter of the structures on the premises. Additionally, for control of certain Premium Pests, Terminix may utilize other pest control strategies including use of traps and glue boards.
+                        </li>
+                        <li>
+                            <b>STANDARD PESTS.</b> <u>Includes:</u>  cockroaches, mice, rats, silverfish, "house" ants (other than ants listed in Section 2.c. below), non-poisonous spiders, scorpions, clothes moths, centipedes, millipedes, earwigs, house crickets and paper wasps.  
+                        </li>
+                        <li>
+                            <b>PREMIUM PESTS.</b> Selected by Purchaser on Page 1; may include:  flies (including small flies), fleas, ticks, Carpenter Ants, Pharaoh Ants, Fire Ants, Tawny Crazy Ants, Black Widow Spiders, Brown Recluse Spiders and bees (Yellow Jackets, Hornets and Wasps excluding Paper Wasps), Clothes Moths and Stored Product Pests. Terminix shall control for and mitigate against infestations of each Premium Pest(s) as designated by Purchaser at an additional charge to Purchaser.
+                        </li>
+                        <li>
+                            <b>EXCLUDED PESTS.</b> Terminix shall have no obligation to control for or mitigate against the following pests: Termites (subterranean, dry wood, damp wood), wood boring beetles, bed bugs (Cimex lectularius), mosquitoes or any other pests not specified in Section 2.b. and 2.c. above, unless otherwise agreed to in writing by Terminix.
+                        </li>
+                        <li>
+                        <b>INTERIM SERVICE VISITS.</b> Subject to the limitations in <u>Section 5</u> - <u>Purchaser Cooperation,</u> during the thirty (30) day period immediately following the date of the initial service visit, Terminix shall, upon the request of Customer and at no additional costs to Customer, make an additional service visit to reapply pesticide(s) to the structures on the premises as is reasonably necessary to control for and mitigate against acute infestations of Standard Pests and/or Premium Pests. 
+                        </li>
+                    </ol></div> 
+                    <li>
+                        <b>TERMINIX ULTIMATE PROTECTION GUARANTEE.</b> SUBJECT TO THE COOPERATION OF CUSTOMER AS SET FORTH IN SECTION 5 OF THIS AGREEMENT, THE SERVICES ARE PROVIDED IN ACCORDANCE WITH TERMINIX'S "ULTIMATE PROTECTION GUARANTEE."  SPECIFICALLY, IF CUSTOMER IS NOT REASONABLY SATISFIED WITH THE QUALITY OF TERMINIX'S PEST CONTROL SERVICES PROVIDED TO ONE OR MORE CUSTOMER SITES, CUSTOMER SHALL PROVIDE WRITTEN NOTICE TO TERMINIX OF SUCH SERVICE DEFICIENCY AND TERMINIX SHALL CORRECT SUCH SERVICE DEFICIENCY WITHIN THIRTY (30) DAYS OF RECEIPT OF SUCH NOTICE. IF TERMINIX FAILS TO CORRECT SUCH SERVICE DEFICIENCY TO THE REASONABLE SATISFACTION OF CUSTOMER WITHIN SUCH THIRTY (30) DAY PERIOD, AS CUSTOMER'S SOLE AND EXCLUSIVE REMEDY AND PROVIDED THAT CUSTOMER IS NOT OTHERWISE IN MATERIAL BREACH OF THE AGREEMENT, FOR EACH CUSTOMER SITE THAT TERMINIX FAILED TO CORRECT SUCH SERVICE DEFICIENCY (EACH AN "UNCURED SITE"), TERMINIX SHALL REFUND TO CUSTOMER AN AMOUNT EQUAL TO THE SERVICE CHARGES ACTUALLY PAID BY CUSTOMER FOR THE SERVICES PROVIDED TO SUCH UNCURED SITE PLUS AN ADDITIONAL 10% OF SUCH AMOUNT. FOLLOWING THE PAYMENT BY TERMINIX OF THE REFUND FOR SUCH UNCURED SITE(S), TERMINIX'S OBLIGATION TO PROVIDE SERVICES TO SUCH UNCURED SITE(S) SHALL IMMEDIATELY TERMINATE. EXCEPT FOR THE TERMINATION OF TERMINIX'S OBLIGATION TO PROVIDE SERVICES TO THE UNCURED SITE(S), THIS AGREEMENT SHALL REMAIN IN FULL FORCE AND EFFECT.<br/><br/>
+                    </li>
+                    <li>
+                        <b>ACCESS TO PROPERTY.</b> Customer must allow Terminix access to the structures for any purpose contemplated by this Agreement, including but not limited to reinspections, whether the inspections were requested by the Customer or considered necessary by Terminix. The failure to allow Terminix such access will terminate this Agreement without further notice.<br/><br/>
+                    </li>
+                    <li>
+                        <b>CUSTOMER COOPERATION.</b> Customer's cooperation is important to ensure the most effective results from Services.  Whenever conditions conducive to the breeding and harborage of pests covered by this contract are reported in writing by Terminix to the Customer, and are not corrected by Customer, Terminix cannot ensure effective Services.  If Customer fails to correct the conditions noted by Terminix within a reasonable time period, all guarantees as to the effectiveness of the Services in this Agreement shall automatically terminate.  Further, additional treatments in areas of such conditions that are not corrected as required shall be paid for by Customer as an extra charge.<br/><br/>
+                    </li>
+                    <li>
+                        <b>LIMITATION OF LIABILITY, LIMITED WARRANTY.</b> EXCEPT AS OTHERWISE PROHIBITED BY LAW, TERMINIX DISCLAIMS AND SHALL NOT BE RESPONSIBLE FOR ANY LIABILITY FOR INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY, PUNITIVE AND/OR LOSS OF ENJOYMENT DAMAGES. THE OBLIGATIONS OF TERMINIX SPECIFICALLY STATED IN THIS AGREEMENT ARE GIVEN IN LIEU OF ANY OTHER OBLIGATION OR RESPONSIBILITY, EXPRESS OR IMPLIED, INCLUDING ANY REPRESENTATION OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. THIS AGREEMENT DOES NOT PROVIDE FOR THE REPAIR OF ANY DAMAGE CAUSED BY PESTS.  THIS AGREEMENT DOES NOT GUARANTEE, AND TERMINIX DOES NOT REPRESENT, THAT PESTS WILL NOT RETURN SUBSEQUENT TO SERVICE TREATMENTS.<br/><br/>
+                    </li>
+                    <li>
+                        <b>WATER LEAKAGE.</b> Water leakage in treated areas, in interior areas or through the roof or exterior walls of the structures on the premises, may destroy the effectiveness of treatment by Terminix and is conducive to new infestation. Customer is responsible for making timely repairs as necessary to stop the leakage. Customer's failure to make timely repairs will terminate this Agreement automatically without further notice. Terminix shall have no responsibility for repairs with respect to water leakage.<br/><br/>
+                    </li>
+                    <li>
+                        <b>FORCE MAJEURE.</b> Terminix will not be liable to Customer for any failure to perform or delay in the performance under this Agreement attributable in whole or in part to any cause beyond its reasonable control and without its fault or negligence, including but not limited to acts of God, fires, floods, earthquakes, strikes, unavailability of necessary utilities, blackouts, government actions, war, civil disturbance, insurrection, or sabotage.<br/><br/>
+                    </li>
+                    <li>
+                        <b>ADDITIONAL DISCLAIMERS.</b> This Agreement does not cover and Terminix will not be responsible for damage resulting from or services required for: (a) termites and/or any other wood-destroying organisms except as specifically provided herein; (b) moisture conditions, including but not limited to fungus damage and/or water leakage caused by faulty plumbing, roofs, gutters, downspouts and/or poor drainage; (c) masonry failure or grade alterations; (d) inherent structural problems, including but not limited to, wood to ground contacts; (e) termites entering any rigid foam, wooden or cellulose containing components in contact with the earth and the Structures regardless of whether the component is a part of the Structures; and (f) the failure of Customer to properly cure at Customer's expense any condition that prevents proper treatment or inspection or is conducive to pest infestation.<br/><br/>
+                    </li>
+                    <li>
+                        <b>CHANGE IN LAW.</b> Terminix performs its services in accordance with the requirements of law. In the event of a change in existing law as it pertains to the services herein, Terminix reserves the right to revise the terms of this Agreement or terminate this Agreement.<br/><br/>
+                    </li>
+                    <li>
+                        <b>NON-PAYMENT, DEFAULT.</b> In case of non-payment or default by the Customer, Terminix has the right to terminate this Agreement. In addition, cost of collection including reasonable attorney's fees shall be paid by the Customer, whether suit is filed or not. In addition, interest at the highest legal rate will be assessed for the period of delinquency.<br/><br/>
+                    </li>
+                    <li>
+                        <b>SEVERABILITY.</b> If any part of this Agreement is held to be invalid or unenforceable for any reason, the remaining terms and conditions of this Agreement shall remain in full force and effect.<br/><br/>
+                    </li>
+                    <li>
+                        <b>MANDATORY ARBITRATION.</b> Any claim, dispute or controversy, regarding any contract, tort, statute, or otherwise ("Claim"), arising out of or relating to this agreement or the relationships among the parties hereto shall be resolved by one arbitrator through binding arbitration administered by the American Arbitration Association ("AAA"), under the AAA Commercial or Consumer, as applicable, Rules in effect at the time the Claim is filed ("AAA Rules"). Copies of the AAA Rules and forms can be located at www.adr.org, or by calling 1-800-778-7879. The arbitrator's decision shall be final, binding, and non-appealable. Judgment upon the award may be entered and enforced in any court having jurisdiction. This clause is made pursuant to a transaction involving interstate commerce and shall be governed by the Federal Arbitration Act. Neither party shall sue the other party other than as provided herein or for enforcement of this clause or of the arbitrator's award; any such suit may be brought only in Federal District Court for the District or, if any such court lacks jurisdiction, in any state court that has jurisdiction. The arbitrator, and not any federal, state, or local court, shall have exclusive authority to resolve any dispute relating to the interpretation, applicability, unconscionability, arbitrability, enforceability or formation of this Agreement including any claim that all or any part of the Agreement is void or voidable. However, the preceding sentence shall not apply to the clause entitled "Class Action Waiver." Venue for arbitration hereunder shall lie in Memphis, TN.<br/><br/>
+                    </li>
+                    <li>
+                        <b>CLASS ACTION WAIVER.</b> Any Claim must be brought in the parties' individual capacity, and not as a plaintiff or class member in any purported class, collective, representative, multiple plaintiff, or similar proceeding ("<u>Class Action</u>"). The parties expressly waive any ability to maintain any Class Action in any forum. The arbitrator shall not have authority to combine or aggregate similar claims or conduct any Class Action nor make an award to any person or entity not a party to the arbitration. Any claim that all or part of this Class Action Waiver is unenforceable, unconscionable, void, or voidable may be determined only by a court of competent jurisdiction and not by an arbitrator. THE PARTIES UNDERSTAND THAT THEY WOULD HAVE HAD A RIGHT TO LITIGATE THROUGH A COURT, TO HAVE A JUDGE OR JURY DECIDE THEIR CASE AND TO BE PARTY TO A CLASS OR REPRESENTATIVE ACTION. HOWEVER, THE PARTIES UNDERSTAND AND CHOOSE TO HAVE ANY CLAIMS DECIDED INDIVIDUALLY, THROUGH ARBITRATION.<br/><br/>
+                    </li>
+                    <li>
+                        <b>GOVERNING LAW.</b>  Except for the Mandatory Arbitration Clause in Section 13 of this Agreement which is governed by and construed in accordance with the Federal Arbitration Act, this Agreement shall be governed by, and construed in accordance with, the laws of the state in which the dispute arises without regard to the conflict of laws provisions.<br/><br/>
+                    </li>
+                    <li>
+                        <b>ENTIRE AGREEMENT.</b> This Agreement, together with all exhibits thereto, constitutes the entire agreement between the parties, supersedes all proposals, oral or written, and all other communications between the parties relating to such subject matter and no other representations or statements will be binding upon the parties. This Agreement may not be modified or amended in any way without the written consent of both parties.
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="footerbar">   
+            <div class="footer">
+                www.terminix.com<br/>Commercial One Time Pest Control Service (9-10-2015)<br/>© 2015 The Terminix International Company Limited Partnership
+            </div>
+            <div class="pagenum"></div>
+        </div>  
+    </div>
+</div>
+    
+</body>
+</html>
